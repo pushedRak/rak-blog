@@ -3,11 +3,11 @@
 
 import { css } from "@emotion/react";
 import PostList from "./PostList";
-import { Post } from "@/types/post";
 import Sidebar from "./Sidebar";
+import { PostMetadata } from "@/utils/mdx";
 
 interface HomeContentProps {
-  posts: Post[];
+  posts: PostMetadata[];
 }
 
 export default function HomeContent({posts}: HomeContentProps) {
