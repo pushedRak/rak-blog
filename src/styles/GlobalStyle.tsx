@@ -78,16 +78,25 @@ const baseStyle = css`
   * {
     margin: 0;
     padding: 0;
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
     box-sizing: border-box;
+    -ms-overflow-style: none;  /* IE and Edge 스크롤 제거 */
+    scrollbar-width: none;  /* Firefox 스크롤 제거 */
   }
 
+  *::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera 스크롤 제거 */
+  }
+    
   body {
-      font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: #f0f0f0;
-      color: #222426;
-    }
+    background-color: #f2f4f6;
+  }
+
+  body, button {
+    color: #191919;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
   a {
     color: inherit;
@@ -95,6 +104,8 @@ const baseStyle = css`
   }
 
   button, input, select, textarea {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     background-color: transparent;
     border: none;
     outline: none;

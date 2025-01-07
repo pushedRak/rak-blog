@@ -34,11 +34,15 @@ interface PostCardProps {
 
 export default function PostCard({post}: PostCardProps) {
   return (
-    <Container href={`/posts/${post.slug}`}>
+    <Container href={`/${post.category}/${post.slug}`}>
       <div
         css={css`
           width: 45%;
           overflow: hidden;
+          @media (max-width: 1024px) {
+            width: 35%;
+            min-width: 272px;
+          }
           `}
           >
         <Image src={post.thumbnail ? post.thumbnail : ''} alt='' />
@@ -46,9 +50,9 @@ export default function PostCard({post}: PostCardProps) {
       <div
         css={css`
           display: flex;
+          flex: 1;
           flex-direction: column;
           gap: 16px;
-          width: 55%;
           padding: 24px;
         `}
       >
@@ -61,14 +65,18 @@ export default function PostCard({post}: PostCardProps) {
         >
           {post.title}
         </div>
-        <div>
+        <div
+          css={css`
+            font-size: 0.95rem;  
+          `}
+        >
           {post.description}
         </div>
         <div
           css={css`
             margin-top: auto;
             color: #666;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
           `}
         >
           {post.createdAt}

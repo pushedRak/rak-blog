@@ -1,8 +1,9 @@
 import HomeContent from "@/components/HomeContent";
-import { getAllPosts } from "@/utils/mdx";
+import { getAllCategories, getAllPosts } from "@/utils/mdx";
 
-export default async function Home() {
-  const posts = await getAllPosts();
+export default function Home() {
+  const posts = getAllPosts();
+  const categories = getAllCategories();
 
-  return <HomeContent posts={posts} />
+  return <HomeContent posts={posts} categories={categories} />
 }

@@ -7,21 +7,35 @@ import Sidebar from "./Sidebar";
 import { PostMetadata } from "@/utils/mdx";
 
 interface HomeContentProps {
-  posts: PostMetadata[];
+  posts: PostMetadata[]
+  categories: string[]
 }
 
-export default function HomeContent({posts}: HomeContentProps) {
+export default function HomeContent({posts, categories}: HomeContentProps) {
   return (
     <main 
       css={css`
         display: flex;
         gap: 40px;
-        width: 1024px;
-        padding: 80px 0;
+        max-width: 1024px;
+        padding: 64px 16px;
         margin: 0 auto;
+
+        @media (max-width: 1024px) {
+          gap: 0;
+          padding: 24px 16px;
+        }
       `}
     >
-      <Sidebar />
+      <div
+        css={css`
+          @media (max-width: 1024px) {
+            display: none;
+          }
+        `}
+      >
+        <Sidebar categories={categories} />
+      </div>
       <PostList posts={posts} />
     </main>
   )
