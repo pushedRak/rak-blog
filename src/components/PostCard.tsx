@@ -38,6 +38,7 @@ export default function PostCard({post}: PostCardProps) {
       <div
         css={css`
           width: 45%;
+          min-width: 328px;
           overflow: hidden;
           @media (max-width: 1024px) {
             width: 35%;

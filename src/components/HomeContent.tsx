@@ -5,6 +5,7 @@ import { css } from "@emotion/react";
 import PostList from "./PostList";
 import Sidebar from "./Sidebar";
 import { PostMetadata } from "@/utils/mdx";
+import { Suspense } from "react";
 
 interface HomeContentProps {
   posts: PostMetadata[]
@@ -27,16 +28,18 @@ export default function HomeContent({posts, categories}: HomeContentProps) {
         }
       `}
     >
-      <div
-        css={css`
-          @media (max-width: 1024px) {
-            display: none;
-          }
-        `}
-      >
-        <Sidebar categories={categories} />
-      </div>
-      <PostList posts={posts} />
+      <Suspense>
+        <div
+          css={css`
+            @media (max-width: 1024px) {
+              display: none;
+            }
+          `}
+        >
+          <Sidebar categories={categories} />
+        </div>
+        <PostList posts={posts} />
+      </Suspense>
     </main>
   )
 }
