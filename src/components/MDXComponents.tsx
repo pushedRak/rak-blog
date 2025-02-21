@@ -52,10 +52,20 @@ const StyledPre = styled.pre`
   margin: 1rem 0;
 `
 
+const StyledA = styled.a`
+  color: #0284ff;
+  transition: color 0.3s ease-out;
+
+  &:hover {
+    color: #0266aa;
+  }
+`
+
 export const components = {
   h1: StyledH1,
   h2: StyledH2,
   p: StyledP,
+  a: StyledA,
   ul: StyledUl,
   li: StyledLi,
   blockquote: StyledBlockquote,

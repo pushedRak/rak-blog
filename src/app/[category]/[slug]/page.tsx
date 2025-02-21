@@ -1,5 +1,5 @@
 import { getPostBySlug, getAllPosts } from '@/utils/mdx';
-import PostContent from '@/components/PostContent';
+import PostContent from '@/app/[category]/[slug]/components/PostContent';
 
 export function generateStaticParams() {
   const posts = getAllPosts()

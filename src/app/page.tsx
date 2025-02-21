@@ -1,4 +1,4 @@
-import HomeContent from "@/components/HomeContent";
+import HomeContent from "./components/HomeContent";
 import { getAllCategories, getAllPosts } from "@/utils/mdx";
 
 export default function Home() {

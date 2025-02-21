@@ -12,6 +12,7 @@ export interface PostMetadata {
   thumbnail?: string
   slug: string
   category: string
+  tags?: string[]
 }
 
 // 모든 카테고리 목록을 가져오는 함수

@@ -1,9 +1,7 @@
-/** @jsxImportSource @emotion/react */
-
-import { css } from "@emotion/react";
 import PostCard from "./PostCard";
 import { PostMetadata } from "@/utils/mdx";
 import { useSearchParams } from "next/navigation";
+import { CategoryName, Container, PostsContainer } from "./PostList.styles";
 
 interface PostListProps {
   posts: PostMetadata[];
@@ -20,38 +18,15 @@ export default function PostList({posts}: PostListProps) {
   const category = searchParams.get('category') || 'all';
   
   return (
-    <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          gap: 24px;
-
-          @media (max-width: 1024px) {
-            width: 100%;
-          }
-        `}
-      >
-        <div
-          css={css`
-            font-size: 3.25rem;
-            font-weight: 900;
-          `}
-        >
-          {categoryNames[category]}
-        </div>
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            gap: 24px;  
-          `}
-        >
+    <Container>
+        <CategoryName>{categoryNames[category]}</CategoryName>
+        <PostsContainer>
           {posts
             .filter(post => post.category === category || category === 'all')
             .map((post, index) => (
             <PostCard key={index} post={post} />
           ))}
-        </div>
-      </div>
+        </PostsContainer>
+      </Container>
   )
 }
