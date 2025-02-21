@@ -1,6 +1,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { GithubIcon } from '../../components/icons/GithubIcon';
-import { Category, CategoryTitle, Container, InfoWrapper, Photo, ProfileLink, SidebarFooter } from './Sidebar.styles';
+import { Category, CategoryTitle, Container, InfoWrapper, Photo, ProfileLink, ProfileLinksContainer, SidebarFooter } from './Sidebar.styles';
+import ResumeIcon from "@/components/icons/ResumeIcon";
 
 interface SidebarProps {
   categories: string[]
@@ -55,14 +56,22 @@ export default function Sidebar({ categories }: SidebarProps) {
         </Category>
       ))}
       <SidebarFooter>
-        <ProfileLink
-          href="https://github.com/pushedRak/" 
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <GithubIcon color="#555" size={20} />
-          <span>Github</span>
-        </ProfileLink>
+        <ProfileLinksContainer>
+          <ProfileLink
+            href="https://github.com/pushedRak/" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon color="#555" size={20} />
+            <span>Github</span>
+          </ProfileLink>
+          <ProfileLink
+            href="/portfolio"
+          >
+            <ResumeIcon color="#555" size={20} />
+            <span>Resume</span>
+          </ProfileLink>
+        </ProfileLinksContainer>
         <div>Copyright 2025.</div>
         <div>손민락 All rights reserved.</div>
       </SidebarFooter>

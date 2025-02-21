@@ -12,6 +12,8 @@ interface HomeContentProps {
 }
 
 export default function HomeContent({posts, categories}: HomeContentProps) {
+
+
   return (
     <Container>
       <Suspense>

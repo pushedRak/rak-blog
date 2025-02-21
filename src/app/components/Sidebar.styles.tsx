@@ -48,7 +48,7 @@ export const Category = styled.button<{selected: boolean}>`
   cursor: pointer;
   word-spacing: 0.25em;
 
-  ${props => props.selected && 'font-weight: 800; background-color: #f2f4f6;'}
+  ${props => props.selected && 'background-color: #f2f4f6;'}
 
   &:hover {
     background-color: #f2f4f6;
@@ -56,19 +56,25 @@ export const Category = styled.button<{selected: boolean}>`
 `
 
 export const SidebarFooter = styled.footer`
-  margin-top: 96px;
+  margin-top: 6rem;
   color: #999;
   font-size: 0.6rem;
   line-height: 1.5;
   text-align: center;
 `
 
+export const ProfileLinksContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+`
+
 export const ProfileLink = styled.a`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.3rem;
   width: 50%;
-  padding: 16px;
   color: #191919;
   font-size: 0.75rem;
   transition: opacity 0.2s ease;
